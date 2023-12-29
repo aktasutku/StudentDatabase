@@ -23,7 +23,6 @@ public class Student {
         System.out.print("1 - Freshmen\n2 - Sophmore\n3 - Junior\n4 - Senior\nEnter students class level: ");
         this.gradeYear = in.nextInt();
         setStudentID();
-        System.out.println(firstName + " " + lastName + " " + gradeYear + " " + studentID);
 
     }
     //Generate and ID
@@ -52,10 +51,6 @@ public class Student {
         }  else break;
 
         }while(true);
-
-
-        System.out.println("Enrolled in: " + coursesSet);
-        System.out.println("Tuition balance: " + tuitionBalance);
     }
 
     // View balance
@@ -65,6 +60,7 @@ public class Student {
 
     //Pay Tuition
     public void payTuition(){
+        viewBalance();
         System.out.print("Enter your payment: $");
         Scanner in = new Scanner(System.in);
         int payment = in.nextInt();
@@ -74,5 +70,13 @@ public class Student {
     }
 
     //Show status
+
+    public String showInfo(){
+        return "Name: " + firstName + " " + lastName +
+                "\nGrade Level: " + gradeYear +
+                "\nStudent ID: "+studentID+
+                "\nCourses Enrolled: " + coursesSet +
+                "\nBalance: $" + tuitionBalance;
+    }
 
 }
